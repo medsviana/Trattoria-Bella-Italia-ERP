@@ -1,0 +1,320 @@
+/* ===================== RESET ===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Georgia", serif;
+}
+
+body {
+  color: #2b2b2b;
+  background-color: #fafafa;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===================== HEADER ===================== */
+header {
+  background: #ffffff;
+  border-bottom: 4px solid #c1121f;
+}
+
+.header-container {
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 16px;
+  height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-icon {
+  background: #c1121f;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: white;
+}
+
+.logo span {
+  font-size: 22px;
+  font-weight: bold;
+  color: #1f7a1f;
+}
+
+.login-btn {
+  background: #1f7a1f;
+  color: white;
+  padding: 10px 26px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.login-btn:hover {
+  background: #166534;
+}
+
+/* ===================== CAROUSEL ===================== */
+.carousel-wrapper {
+  width: 100%;
+  background: #eee;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  overflow: hidden;
+}
+
+.carousel-slides {
+  display: flex;
+  width: 400%;
+  height: 100%;
+  transition: transform 0.6s ease-in-out;
+}
+
+.carousel-slide {
+  width: 25%;
+  position: relative;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+
+.carousel-title {
+  color: white;
+  font-size: 42px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.carousel-subtitle {
+  color: #fefefe;
+  font-size: 18px;
+  font-style: italic;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+#slide1:checked ~ .carousel-slides { transform: translateX(0%); }
+#slide2:checked ~ .carousel-slides { transform: translateX(-25%); }
+#slide3:checked ~ .carousel-slides { transform: translateX(-50%); }
+#slide4:checked ~ .carousel-slides { transform: translateX(-75%); }
+
+.carousel-controls {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.carousel-controls label {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#slide1:checked ~ .carousel-controls label:nth-child(1),
+#slide2:checked ~ .carousel-controls label:nth-child(2),
+#slide3:checked ~ .carousel-controls label:nth-child(3),
+#slide4:checked ~ .carousel-controls label:nth-child(4) {
+  background: #ffffff;
+  width: 34px;
+  border-radius: 12px;
+}
+    /* ===================== COMANDA ===================== */
+    .comanda-container { max-width:800px; margin:40px auto; padding:20px; background:white; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+    h1, h2 { text-align:center; margin-bottom:20px; }
+    table { width:100%; border-collapse:collapse; margin-bottom:20px; }
+    th, td { border:1px solid #ccc; padding:10px; text-align:left; }
+    th { background:#f4f4f4; }
+    input[type=number] { width:60px; padding:4px; border-radius:4px; border:1px solid #ccc; text-align:center; }
+    input[type=submit] { background:#1f7a1f; color:white; padding:10px 26px; border-radius:999px; border:none; cursor:pointer; transition:background 0.2s; display:block; margin:auto; }
+    input[type=submit]:hover { background:#166534; }
+    a.back-link { display:block; text-align:center; margin-top:20px; color:#c1121f; font-weight:bold; }
+/* Botón de crear factura */
+.btn-crear-factura {
+    background: #1f7a1f;
+    color: white;
+    padding: 10px 26px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.btn-crear-factura:hover {
+    background: #166534;
+}
+
+
+/* ===================== FOOTER ===================== */
+footer {
+  background: #1f2937;
+  color: #e5e7eb;
+  margin-top: auto; /* para stick bottom */
+}
+
+.footer-container {
+  max-width: 1280px;
+  margin: auto;
+  padding: 56px 16px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px;
+}
+
+footer h3, footer h4 {
+  color: white;
+  margin-bottom: 16px;
+}
+
+footer ul {
+  list-style: none;
+}
+
+footer li {
+  margin-bottom: 10px;
+}
+
+footer a:hover {
+  color: #facc15;
+}
+
+.footer-contact div {
+  margin-bottom: 10px;
+}
+
+.socials {
+  display: flex;
+  gap: 16px;
+  font-size: 22px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #374151;
+  margin-top: 32px;
+  padding-top: 32px;
+  text-align: center;
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+/* ===================== FACTURACIÓN ===================== */
+.facturacion {
+  max-width: 900px;
+  margin: auto;
+  padding: 32px 16px;
+}
+
+.facturacion h2 {
+  margin-bottom: 20px;
+}
+
+.facturacion fieldset {
+  margin-bottom: 24px;
+  padding: 16px;
+  border: 1px solid #ddd;
+}
+
+.facturacion legend {
+  font-weight: bold;
+  padding: 0 8px;
+}
+
+.facturacion label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.facturacion input[type="text"],
+.facturacion input[type="number"],
+.facturacion input[type="date"] {
+  width: 100%;
+  padding: 6px;
+  margin-top: 4px;
+}
+
+.facturacion table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+.facturacion th,
+.facturacion td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+.facturacion th {
+  background: #f3f3f3;
+}
+
+.facturacion tfoot td {
+  font-weight: bold;
+}
+
+.facturacion button {
+  margin-top: 16px;
+  padding: 10px 18px;
+  background: #1f7a1f;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.facturacion button:hover {
+  background: #166534;
+}
+
+.facturacion .add-linea {
+  margin-top: 12px;
+}
